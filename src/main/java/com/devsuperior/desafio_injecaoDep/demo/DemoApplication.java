@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.devsuperior.desafio_injecaoDep.demo.entities.Order;
 import com.devsuperior.desafio_injecaoDep.demo.service.OrderService;
-import com.devsuperior.desafio_injecaoDep.demo.service.ShippingService;
 
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
@@ -18,10 +17,7 @@ public class DemoApplication implements CommandLineRunner {
 	@Autowired
 	private OrderService orderService;
 	
-	@Autowired
-	private ShippingService shippingService;
-
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
@@ -42,7 +38,7 @@ public class DemoApplication implements CommandLineRunner {
 		Order order = new Order(code, basic, discount);
 		System.out.println("Pedido Código " + order.getCode());
 		System.out.print("Valor total: R$ ");
-		System.out.println(orderService.total(order) + shippingService.shipment(order));
+		System.out.println(orderService.total(order));
 	
 		
 		sc.close();
