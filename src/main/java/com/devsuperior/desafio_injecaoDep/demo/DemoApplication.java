@@ -37,8 +37,10 @@ public class DemoApplication implements CommandLineRunner {
 		
 		Order order = new Order(code, basic, discount);
 		System.out.println("Pedido Código " + order.getCode());
-		System.out.print("Valor total: R$ ");
-		System.out.println(orderService.total(order));
+		System.out.printf("Valor total: R$ %.2f%n", orderService.total(order));
+		
+		//System.out.print("Valor total: R$ ");
+		//System.out.println(orderService.total(order));
 	
 		
 		sc.close();
